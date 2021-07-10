@@ -1,12 +1,31 @@
 <template>
- <h1>after geeting crazy</h1>
+ <h1>Ninja Reaction Timer</h1>
+ <button @click="start" >play</button>
+
 </template>
+
 
 <script>
 
+import Block from './components/Bloc.vue'
+
 export default {
   name: 'App',
-  components: {
+  components: { 
+    Block
+  }, 
+  data() {
+    return {
+      isPlaying: false, 
+      delay: null
+    }
+  }, 
+  methods: {
+    start(){
+      this.delay = 2000 + Math.random() * 5000;
+      this.isPlaying = true;
+      console.log(this.delay)
+    }
   }
 }
 </script>
